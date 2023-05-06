@@ -18,7 +18,7 @@ const gallery = document.querySelector(".gallery");
 const galleryList = images
   .map(
     (img) =>
-      `<li><img class = "picture" src = ${img.url} alt = ${img.alt}  width="220"></img></li>`
+      `<li><img class = "picture" src = ${img.url} alt = ${img.alt}  width="500"></img></li>`
   )
   .join("");
 
@@ -26,5 +26,7 @@ gallery.insertAdjacentHTML("beforeend", galleryList);
 
 gallery.style.cssText = `list-style: none;
 display: flex;
+flex-wrap: wrap;
 flex-direction: row-reverse;
+justify-content: center;
 gap: 20px`;
