@@ -26,5 +26,5 @@ gallery.insertAdjacentHTML("beforeend", galleryList);
 
 gallery.style.cssText = `list-style: none;
 display: flex;
-flex-direction: row;
+flex-direction: row-reverse;
 gap: 20px`;
