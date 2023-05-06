@@ -18,7 +18,7 @@ const createBoxes = (amount) => {
   let size = 30;
   let stringDiv = "";
   for (let i = 0; i < amount; i += 1) {
-    stringDiv += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()};"></div>`;
+    stringDiv += `<div style="width: ${size}px; height: ${size}px; border-radius: 50%; align-self: center; background-color: ${getRandomHexColor()};"></div>`;
     size += 10;
   }
   boxesEl.insertAdjacentHTML("afterbegin", stringDiv);
