@@ -37,4 +37,6 @@ destroyEl.addEventListener("click", () => {
     (inputEl.value = "");
 });
 
-boxesEl.style.cssText = `display: flex; flex-wrap: wrap; gap: 10px`;
+boxesEl.style.display = "flex";
+boxesEl.style.flexWrap = "wrap";
+boxesEl.style.gap = "10px";
