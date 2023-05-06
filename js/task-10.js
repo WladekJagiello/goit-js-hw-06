@@ -18,7 +18,7 @@ const createBoxes = (amount) => {
   let size = 30;
   let stringDiv = "";
   for (let i = 0; i < amount; i += 1) {
-    stringDiv += `<div style="width: ${size}px; height: ${size}px; margin-top: 10px; background-color: ${getRandomHexColor()};"></div>`;
+    stringDiv += `<div style="width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()};"></div>`;
     size += 10;
   }
   boxesEl.insertAdjacentHTML("afterbegin", stringDiv);
@@ -36,3 +36,5 @@ destroyEl.addEventListener("click", () => {
     : (boxesEl.innerHTML = ""),
     (inputEl.value = "");
 });
+
+boxesEl.style.cssText = `display: flex; flex-wrap: wrap; gap: 10px`;
