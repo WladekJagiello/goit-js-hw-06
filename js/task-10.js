@@ -11,6 +11,10 @@ const destroyEl = document.querySelector("button[data-destroy]");
 let amount;
 
 inputEl.addEventListener("input", (event) => {
+  if (boxesEl.innerHTML !== "") {
+    boxesEl.innerHTML = "";
+    return;
+  }
   if (event.currentTarget.value > 100) {
     inputEl.value = "";
     return alert("Введіть число від 1 до 100");
