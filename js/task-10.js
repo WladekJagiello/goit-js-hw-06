@@ -11,7 +11,12 @@ const destroyEl = document.querySelector("button[data-destroy]");
 let amount;
 
 inputEl.addEventListener("input", (event) => {
-  amount = event.currentTarget.value;
+  if (event.currentTarget.value > 100) {
+    inputEl.value = "";
+    return alert("Введіть число від 1 до 100");
+  } else {
+    amount = event.currentTarget.value;
+  }
 });
 
 const createBoxes = (amount) => {
@@ -25,9 +30,13 @@ const createBoxes = (amount) => {
 };
 
 createEl.addEventListener("click", () => {
-  inputEl.value !== ""
-    ? createBoxes(amount)
-    : alert("Введіть число від 1 до 100");
+  if (inputEl.value !== "" && boxesEl.innerHTML === "") {
+    createBoxes(amount);
+    inputEl.value = "";
+  } else {
+    boxesEl.innerHTML = "";
+    alert("Введіть число від 1 до 100");
+  }
 });
 
 destroyEl.addEventListener("click", () => {
