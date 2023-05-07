@@ -44,7 +44,7 @@ createEl.addEventListener("click", () => {
 });
 
 destroyEl.addEventListener("click", () => {
-  inputEl.value === ""
+  inputEl.value === "" && boxesEl.innerHTML === ""
     ? alert("Введіть число від 1 до 100")
     : (boxesEl.innerHTML = ""),
     (inputEl.value = "");
