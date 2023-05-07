@@ -13,7 +13,6 @@ let amount;
 inputEl.addEventListener("input", (event) => {
   if (boxesEl.innerHTML !== "") {
     boxesEl.innerHTML = "";
-    return;
   }
   if (event.currentTarget.value > 100) {
     inputEl.value = "";
@@ -34,7 +33,7 @@ const createBoxes = (amount) => {
 };
 
 createEl.addEventListener("click", () => {
-  if (inputEl.value !== "" && boxesEl.innerHTML === "") {
+  if (inputEl.value !== "") {
     createBoxes(amount);
     inputEl.value = "";
   } else {
