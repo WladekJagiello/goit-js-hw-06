@@ -10,19 +10,10 @@ const createEl = document.querySelector("button[data-create]");
 const destroyEl = document.querySelector("button[data-destroy]");
 let amount;
 
-inputEl.addEventListener("input", (event) => {
-  boxesEl.innerHTML = "";
-  if (event.currentTarget.value > 100) {
-    inputEl.value = "";
-    return alert("Введіть число від 1 до 100");
-  } else {
-    amount = event.currentTarget.value;
-  }
-});
-
 const createBoxes = (amount) => {
   let size = 30;
   let stringDiv = "";
+
   for (let i = 0; i < amount; i += 1) {
     stringDiv += `<div style="width: ${size}px; height: ${size}px; border-radius: 50%; align-self: center; background-color: ${getRandomHexColor()};"></div>`;
     size += 10;
@@ -31,11 +22,15 @@ const createBoxes = (amount) => {
 };
 
 createEl.addEventListener("click", () => {
-  if (inputEl.value !== "") {
+  boxesEl.innerHTML = "";
+  amount = inputEl.value;
+
+  if (inputEl.value !== "" && inputEl.value < 101) {
     createBoxes(amount);
     inputEl.value = "";
   } else {
     boxesEl.innerHTML = "";
+    inputEl.value = "";
     alert("Введіть число від 1 до 100");
   }
 });
